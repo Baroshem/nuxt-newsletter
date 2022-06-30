@@ -1,0 +1,61 @@
+{
+  "name": "nuxt-newsletter",
+  "version": "0.1.0",
+  "description": "Newsletter module for Nuxt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baroshem/nuxt-newsletter.git"
+  },
+  "author": "Jakub Andrzejewski",
+  "contributors": [
+    "Baroshem <jakub.andrzejewski.dev@gmail.com>"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "docs": "cd docs && yarn dev",
+    "release": "nuxt-module-build && standard-version && git push --follow-tags && npm publish",
+    "lint": "eslint --ext .js,.ts,.vue"
+  },
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "@nuxt/kit": "3.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "eslint": "latest",
+    "nuxt": "3.0.0-rc.4",
+    "standard-version": "^9.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "playground"
+  },
+  "keywords": [
+    "newsletter",
+    "mailchimp",
+    "revue",
+    "buttondown",
+    "nuxt",
+    "module"
+  ]
+}
