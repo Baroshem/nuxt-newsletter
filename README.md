@@ -1,6 +1,6 @@
-[![@nuxtjs/newsletter](https://newsletter.nuxtjs.org/preview.png)](https://newsletter.nuxtjs.org)
+[![nuxt-newsletter](https://nuxt-newsletter.netlify.app/preview.png)](https://nuxt-newsletter.netlify.app)
 
-# @nuxtjs/newsletter
+# nuxt-newsletter
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -10,8 +10,8 @@
 
 > Newsletter module for [Nuxt](https://v3.nuxtjs.org)
 
-- [✨ &nbsp;Release Notes](https://github.com/nuxt-community/newsletter-module/releases)
-- [📖 &nbsp;Read the documentation](https://newsletter.nuxtjs.org)
+- [✨ &nbsp;Release Notes](https://github.com/baroshem/nuxt-newsletter/releases)
+- [📖 &nbsp;Read the documentation](https://nuxt-newsletter.netlify.app)
 
 ## Features
 
@@ -22,25 +22,25 @@
 - [Coming soon] More newsletter providers
 - TypeScript support
 
-[📖 &nbsp;Read the documentation](https://newsletter.nuxtjs.org)
+[📖 &nbsp;Read the documentation](https://nuxt-newsletter.netlify.app)
 
 ## Setup
 
 ```sh
-yarn add @nuxtjs/newsletter # yarn
-npm i @nuxtjs/newsletter # npm
+yarn add nuxt-newsletter # yarn
+npm i nuxt-newsletter # npm
 ```
 
 ## Basic usage
 
-Firstly, you need to add `@nuxtjs/newsletter` to your Nuxt config.
+Firstly, you need to add `nuxt-newsletter` to your Nuxt config.
 
 ```javascript
 // nuxt.config.js
 
 {
     modules: [
-        "@nuxtjs/newsletter",
+        "nuxt-newsletter",
     ],
     newsletter: {
       // mailchimp | revue | buttondown
@@ -51,7 +51,7 @@ Firstly, you need to add `@nuxtjs/newsletter` to your Nuxt config.
 }
 ```
 
-Then you can start using `@nuxtjs/newsletter` in your app!
+Then you can start using `nuxt-newsletter` in your app!
 
 ```vue
 <template>
@@ -73,13 +73,13 @@ Then you can start using `@nuxtjs/newsletter` in your app!
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/newsletter/latest.svg
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/newsletter
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/newsletter.svg
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/newsletter
-[github-actions-ci-src]: https://github.com/nuxt-modules/newsletter-module/actions/workflows/ci.yml/badge.svg
-[github-actions-ci-href]: https://github.com/nuxt-community/newsletter-module/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/newsletter-module.svg
-[codecov-href]: https://codecov.io/gh/nuxt-community/newsletter-module
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/newsletter.svg
-[license-href]: https://npmjs.com/package/@nuxtjs/newsletter
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-newsletter/latest.svg
+[npm-version-href]: https://npmjs.com/package/nuxt-newsletter
+[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-newsletter.svg
+[npm-downloads-href]: https://npmjs.com/package/nuxt-newsletter
+[github-actions-ci-src]: https://github.com/baroshem/nuxt-newsletter/actions/workflows/ci.yml/badge.svg
+[github-actions-ci-href]: https://github.com/baroshem/nuxt-newsletter/actions?query=workflow%3Aci
+[codecov-src]: https://img.shields.io/codecov/c/github/baroshem/nuxt-newsletter.svg
+[codecov-href]: https://codecov.io/gh/baroshem/nuxt-newsletter
+[license-src]: https://img.shields.io/npm/l/nuxt-newsletter.svg
+[license-href]: https://npmjs.com/package/nuxt-newsletter
