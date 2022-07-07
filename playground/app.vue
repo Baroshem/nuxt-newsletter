@@ -9,7 +9,7 @@
       <newsletter-form :theme="{ container: 'newsletter-form', button: 'newsletter-form__button', header: 'newsletter-form__header', input: 'newsletter-form__input' }" />
     </div>
     <div>
-      <h1>Customized NewsletterFrom.vue component</h1>
+      <h1>Customized NewsletterForm.vue component</h1>
       <newsletter-form
         @subscribed="log"
         headerText="Cool Newsletter"
