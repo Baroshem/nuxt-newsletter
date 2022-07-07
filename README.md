@@ -5,10 +5,9 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
-[![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Newsletter module for [Nuxt](https://v3.nuxtjs.org)
+> Newsletter module for [Nuxt 3](https://v3.nuxtjs.org)
 
 - [✨ &nbsp;Release Notes](https://github.com/baroshem/nuxt-newsletter/releases)
 - [📖 &nbsp;Read the documentation](https://nuxt-newsletter.netlify.app)
@@ -18,8 +17,7 @@
 - Nuxt 3 ready
 - Easy integration with Mailchimp, Revue, Buttondown
 - Useful (optional) NewletterForm.vue component
-- Handy useNewsletterSubscribe composable
-- [Coming soon] More newsletter providers
+- Handy `useNewsletterSubscribe` composable
 - TypeScript support
 
 [📖 &nbsp;Read the documentation](https://nuxt-newsletter.netlify.app)
@@ -79,7 +77,5 @@ Then you can start using `nuxt-newsletter` in your app!
 [npm-downloads-href]: https://npmjs.com/package/nuxt-newsletter
 [github-actions-ci-src]: https://github.com/baroshem/nuxt-newsletter/actions/workflows/ci.yml/badge.svg
 [github-actions-ci-href]: https://github.com/baroshem/nuxt-newsletter/actions?query=workflow%3Aci
-[codecov-src]: https://img.shields.io/codecov/c/github/baroshem/nuxt-newsletter.svg
-[codecov-href]: https://codecov.io/gh/baroshem/nuxt-newsletter
 [license-src]: https://img.shields.io/npm/l/nuxt-newsletter.svg
 [license-href]: https://npmjs.com/package/nuxt-newsletter
