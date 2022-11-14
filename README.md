@@ -16,8 +16,8 @@
 
 - Nuxt 3 ready
 - Easy integration with Mailchimp, Revue, Buttondown
-- Useful (optional) NewletterForm.vue component
-- Handy `useNewsletterSubscribe` composable
+- Unstyled NewletterForm.vue component
+- Handy useNewsletterSubscribe composable
 - TypeScript support
 
 [📖 &nbsp;Read the documentation](https://nuxt-newsletter.netlify.app)

@@ -1,8 +1,8 @@
-import { useBody } from 'h3'
+import { defineEventHandler, createError, readBody } from 'h3'
 import { useRuntimeConfig } from '#imports'
 
-export default async (req, res) => {
-  const { email } = await useBody(req)
+export default defineEventHandler(async (event) => {
+  const { email } = await readBody(event)
 
   if (!email) {
     console.error('`[@nuxtjs/newsletter]` Missing `email` in the subscribe body')
@@ -12,7 +12,6 @@ export default async (req, res) => {
   const newsletterConfig = useRuntimeConfig().newsletter
   const providerName = Object.keys(newsletterConfig)[0];
 
-  try {
     const result = await fetch(
       `https://api.buttondown.email/v1/subscribers`,
       {
@@ -27,12 +26,9 @@ export default async (req, res) => {
 
     const jsonResponse = await result.json()
 
-    const message = Array.isArray(jsonResponse) ? jsonResponse : `Email ${jsonResponse.email} subscribed to Buttondown`
+    if (result.status !== 200) throw createError({ statusCode: result.status, statusMessage: result.statusText })
 
-    res.statusCode = result.status
-    res.end(JSON.stringify(message))
-  } catch (error) {
-    res.statusCode = 500
-    res.end('Unexpected error occured', error)
-  }
-}
+    const message = Array.isArray(jsonResponse) ? jsonResponse : { message: `Email ${jsonResponse.email} subscribed to Buttondown`, status: 200 }
+
+    return message
+})

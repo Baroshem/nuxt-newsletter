@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addComponentsDir, addServerHandler } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, addServerHandler, addImportsDir } from '@nuxt/kit'
 import defu from 'defu'
 
 type Provider = 'buttondown' | 'mailchimp' | 'revue';
@@ -54,9 +54,7 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    nuxt.hook('autoImports:dirs', (dirs) => {
-      dirs.push(resolve(runtimeDir, 'composables'))
-    })
+    addImportsDir(resolve(runtimeDir, 'composables'))
 
     if (options[Object.keys(options)[0]].component) {
       addComponentsDir({
