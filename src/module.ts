@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url'
 import { defineNuxtModule, addComponentsDir, addServerHandler, addImportsDir } from '@nuxt/kit'
 import defu from 'defu'
 
-type Provider = 'buttondown' | 'mailchimp' | 'revue';
+type Provider = 'buttondown' | 'mailchimp' | 'revue' | string;
 
 export type ModuleOptions = {
   [key in Provider]: {
