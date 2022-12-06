@@ -63,7 +63,8 @@ Then you can start using `nuxt-newsletter` in your app!
 
 1. Clone this repository
 2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `yarn dev` or `npm run dev`
+3. Prepare playground environment using `yarn dev:prepare` or `npm run dev:prepare`
+4. Start development server using `yarn dev` or `npm run dev`
 
 ## License
 
