@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
     try {
       const response = await mailchimp.lists.addListMember(newsletterConfig[providerName].audienceId, {
         email_address: email,
-        status: 'subscribed'
+        status: newsletterConfig[providerName].serverPrefix.memberStatus
       });
 
       result = { message: `Email ${response.email_address} subscribed to Mailchimp`, status: 200 }
