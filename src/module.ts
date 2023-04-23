@@ -4,6 +4,7 @@ import { defineNuxtModule, addComponentsDir, addServerHandler, addImportsDir } f
 import defu from 'defu'
 
 type Provider = 'buttondown' | 'mailchimp' | 'revue' | string;
+type McMemberStatus = 'pending' | 'subscribed' | 'unsubscribed' | 'cleaned' | 'transactional' | string;
 
 export type ModuleOptions = {
   [key in Provider]: {
@@ -11,6 +12,7 @@ export type ModuleOptions = {
     component?: boolean;
     serverPrefix?: string; // Mailchimp only
     audienceId?: string; // Mailchimp only
+    memberStatus?: McMemberStatus; // Mailchimp only
   };
 };
 
@@ -26,9 +28,9 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'newsletter',
     compatibility: {
       nuxt: '3',
-    }
+    },
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     if (Object.keys(options).length > 1) {
       throw new Error('`[nuxt-newsletter]` More than one newsletter provider registered. Please choose only one')
     }
@@ -45,6 +47,11 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (options.mailchimp && !options.mailchimp.serverPrefix) {
       throw new Error('`[nuxt-newsletter]` Missing `mailchimp.server` value in module configuration')
+    }
+
+    // Setting 'subscribed' for new member subscribing with Mailchimp
+    if (options.mailchimp && !options.mailchimp.memberStatus) {
+      options.mailchimp.memberStatus = 'subscribed'
     }
 
     nuxt.options.runtimeConfig.newsletter = defu(nuxt.options.runtimeConfig.newsletter, {
